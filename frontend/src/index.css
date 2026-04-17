@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-primary: #1e3a8a;
+    --color-primary-light: #2563eb;
+    --color-primary-dark: #1e367a;
+
+    --color-accent: #10b981;
+    --color-accent-light: #34d399;
+    --color-accent-dark: #059669;
+
+    --color-background: #f8fafc;
+
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+@layer base {
+    body {
+        background-color: var(--color-background);
+        color: #0f172a;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@layer components {
+    .card {
+        background-color: white;
+        border-radius: 0.75rem;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid #f1f5f9;
+        padding: 1.5rem;
+        transition: all 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-primary {
+        background-color: var(--color-primary);
+        color: white;
+        padding: 0.625rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-primary-light);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:active {
+        transform: scale(0.95);
+    }
+
+    .btn-secondary {
+        background-color: white;
+        color: #374151;
+        border: 1px solid #e5e7eb;
+        padding: 0.625rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-secondary:hover {
+        background-color: #f9fafb;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary:active {
+        transform: scale(0.95);
+    }
+
+    .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: var(--shadow-soft);
+    }
+}
